@@ -285,7 +285,13 @@ form textarea{
     margin: 0px 3.125rem;
   }
   .text2{
-    margin: 20px 3.125rem ;
+    margin: 20px 50px ;
   }
+  .data > #btn{
+    margin: 5px 50px;
+  }
+ 
+
+  
   
 }
