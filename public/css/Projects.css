@@ -1,0 +1,517 @@
+*{box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /* importing fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200&family=Open+Sans:wght@300;400;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Source+Sans+Pro:ital,wght@0,200;0,300;1,200;1,300&display=swap');
+  /*=====================================*/
+  
+
+
+  #preloader{
+    top: 0%;
+    background: #101010 url(/images/preloader.gif) no-repeat center center;
+    width: 100%;
+    height: 100vh;
+  
+    position: fixed;
+    z-index: 99999;
+  }
+  
+  
+  
+body{
+  background-color: #000000;
+  height: 100vh ;
+}
+
+
+/* -------------------------------NEW--NAV-------------------------------------*/
+
+
+
+.nav-links ul{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5rem;
+  margin-top: 2rem;
+}
+
+.nav-links ul li{
+  list-style-type: none;
+  margin: 0 50px;
+}
+.nav-links ul li a{
+  text-decoration: none;
+  color: white;
+
+  /* font styling */
+   font-family: "Roboto Cn", sans-serif;
+  font-weight: lighter;
+  font-size: 1.3rem;
+  letter-spacing: 0.25rem;
+}
+
+
+.nav-links ul li a:hover,
+.nav-links ul li a:focus{
+  cursor: pointer;
+  color: #42fbf2;
+  transition-duration: 0.6s ease-out;
+  text-decoration: none;
+  text-shadow: 0 0 5px #42fbf2,
+  0 0 20px #42fbf2,
+  0 0 60px #42fbf2; 
+}
+
+.selected{
+  color: #42fbf2;
+  border-bottom: 2px solid #42fbf2;
+  text-shadow: 0 0 5px #42fbf2,
+  0 0 20px #42fbf2,
+  0 0 60px #42fbf2; 
+}
+
+
+/* toggle button */
+.toggle-button{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar{
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+/* Mobile responsive  */
+@media (max-width:600px) {
+  .toggle-button{
+    display: flex;
+  
+  }
+
+  .nav-links{
+    display: none;
+    width: 100%;
+  }
+ 
+  .navbar ul{
+    flex-direction: column;
+  }  
+  .nav-links ul{
+    margin: 20px 0px;
+    width: 100%;
+  }
+  .nav-links li{
+    text-align: center;
+    /* margin: 50px 0px; */
+    padding: 45px;
+  }
+
+   /* onlclick make it active */
+   .nav-links.active{
+    display: flex;
+    margin-top: 120px;
+   }  
+
+
+
+}
+
+
+/* -------------------------------NEW--NAV--END -------------------------------------*/
+
+/* -------------------------------PAST PROJECTS START -------------------------------------*/
+
+
+
+.sub-container{
+  display: grid;
+  grid-template-columns: repeat(2,auto);
+  grid-auto-flow: dense !important;
+  justify-content: center;
+  grid-gap: 50px;
+  margin: 3.75rem auto;
+
+  
+}
+
+.grid-item{
+  border: 2px double #DC143C;
+  border-radius: 5px;
+ 
+ 
+  
+}
+
+.image{
+  width: 100%;
+  overflow: hidden;
+
+}
+
+
+.image > img{
+  width: 550px;
+  height: 300px;
+  object-fit: cover;
+  transition: 0.4s ease-in-out;
+
+}
+
+.image > img{
+  opacity: 60%;
+  transition: 400ms ease-in-out;
+  margin-bottom:-0.25rem;
+}
+
+.image:hover > img{
+  cursor: pointer;
+  opacity: 100%;
+}
+
+
+.image:hover > img{
+  transform: scale(1.1);
+}
+
+
+
+.content{
+  display: flex;
+  justify-content: center;
+
+}
+
+.content > a{
+  margin: 10px 50px;
+  color: white;
+  border: 1px solid #DC143C;
+  border-radius: 10px;
+  padding: 10px 50px;
+  transition: 400ms ease-in-out;
+
+
+}
+
+
+.content > a:hover, .content > a:focus{
+  cursor: pointer;
+  background-color: #DC143C;
+  box-shadow: 0 0 5px #DC143C,
+  0 0 10px #DC143C,
+  0 0 50px #DC143C; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* LIGHTBOX */
+
+#lightbox{
+    /* postion the item no matter where we are in the page */
+    position: fixed;
+    z-index: 100;/*always on top*/
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+#lightbox.active{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#lightbox.active > img{
+  width: 1000px;
+
+}
+
+
+@media (max-width:600px) {
+  .sub-container{
+    grid-template-columns: repeat(1,auto);
+
+  }
+
+  .grid-item{
+    width: 350px;
+  }
+  
+ 
+  .image > img{
+    width: 350px;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.4s ease-in-out;
+  
+  }
+  #lightbox.active > img{
+    width: 390px;
+  }
+  .content > a{
+    margin: 20px 20px;
+    padding: 10px 20px;
+  }
+
+
+
+}
+
+
+
+
+
+  /* -------------------------------PAST PROJECTS END -------------------------------------*/
+
+
+  
+
+  /* ========================================================= */
+
+#websites{
+  color: #DC143C;
+  display: flex;
+  justify-content: center;
+
+}
+
+#websites h3{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.25rem;
+  font-size: 1.125rem;
+
+}
+
+
+/* head */
+
+#pastp {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+#pastp h1{
+  font-size: 75px;
+  margin-left: 200px;
+
+
+}
+
+
+@media (max-width:600px) {
+  #pastp h1{
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+  /* ========================================== PROJECTS===================================*/
+
+  .projects{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 10px;
+    transform: scale(0.8);
+    grid-gap: 0.7rem;
+    /* margin-top: -310px; */
+    position: absolute;
+    /* top:-350px; */
+  }
+  .projects img{
+    width: 100%;
+
+  }
+
+  .projects a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .projects img:hover{
+    opacity: 0.5;
+    transition: ease-in-out 0.7s;
+    /* transform: scale(1.1);
+    transition:ease-out 0.5s; */
+  
+  }
+
+  .projects .text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid white;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.3rem;
+
+    font-size: 20px;
+    width: 250px;
+
+    margin-left: 25%;
+  }
+
+  .projects .text:hover{
+    background-color: #CF4227;
+    transition: ease-in-out 0.5s;
+  }
+
+ 
+
+
+  /* ============= Animations================================================ */
+
+
+
+
+  .text-focus-in {
+    -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+
+
+
+
+/*
+ * ----------------------------------------
+ * animation text-focus-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+
+
+@media only screen and (max-width:767px){
+  .text-focus-in{
+    animation: none;
+  }
+}
+
+
+/* FOOTER */
+
+
+
+
+.main-footer{
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer div{
+  margin: 0px 50px 30px 50px;
+
+}
+
+
+
+
+
+/* Animations for footer */
+
+.main-footer a:hover,
+.main-footer a:focus{
+  cursor: pointer;
+  color: #42fbf2;
+  transition-duration: 0.3s ease-out;
+  text-decoration: none;
+  text-shadow: 0 0 5px #42fbf2,
+  0 0 20px #42fbf2,
+  0 0 60px #42fbf2; 
+}
+.main-footer  a{
+  color: transparent;
+  background-image: linear-gradient(to left,#2ecc71,#DC143C,#9b59b6,#f39c12);
+  -webkit-background-clip: text;
+  animation: animate 5s linear infinite ;
+  -webkit-background-size: 500%;
+  background-size: 500%;
+}
+
+
+@keyframes animate {
+  0%{
+    background-position: 0 100%;
+  }
+  50%{
+   background-position: 100% 0;
+ }
+ 100%{
+   background-position: 0 100%;
+ }
+  
+}
