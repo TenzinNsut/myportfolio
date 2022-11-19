@@ -8,14 +8,21 @@ window.addEventListener("load",()=>{
 
 
 
+
 // Navigation Bar
 
 const toggleButton = document.getElementsByClassName('toggle-button')[0];
 const navbarLinks = document.getElementsByClassName('nav-links')[0];
+const hide = document.getElementsByClassName('collapse');
 
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active');
+    for (let i = 0; i < hide.length; i++) { 
+        hide[i].classList.toggle('active');
+    }
 })
+
+
 
 
 
