@@ -25,7 +25,9 @@
 
 
 body{
-  background-image: url(../images/HomeBackground.jpg);
+  /* background-image: url(../images/HomeBackground.jpg); */
+  background-image: url(../images/aboutbg.png);
+
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh ;
